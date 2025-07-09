@@ -1,0 +1,29 @@
+server:
+  port: 8787
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://192.168.73.237:8761/eureka/  
+      
+management:
+  server:
+    port: 1${server.port}
+  health:
+    db:
+      enabled: true
+    redis:
+      enabled: true
+    mail:
+      enabled: true
+  endpoints:
+    gateway:
+      enabled: true
+    web:
+      exposure:
+        include: '*'

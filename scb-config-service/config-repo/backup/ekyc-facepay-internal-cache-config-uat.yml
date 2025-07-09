@@ -1,0 +1,85 @@
+#Cấu hình cache chung của tất cả các service
+spring:
+  cache:
+    type: redis
+    security:
+      enable: true
+      secret-key: a37bccecf35a8fb9ae697c14
+      #{redis-secret-key}
+      config-key: Y7Z5dKrgzJezJvMnBg2ciyGQ
+      #{redis-config-key}
+    redis:
+      use-key-prefix: true
+      key-prefix: ekyc
+      cache-null-values: false
+  data:
+    redis:
+      database: 10
+      sentinel:
+        nodes: 192.168.74.99:26379,192.168.74.100:26379,192.168.74.101:26379
+        #{ip1}:26379,{ip2}:26379,{ip3}:26379
+      #master: fcSm9B52oaVYJFNfC+fVRL21BGd8hlnoZCrI
+      password: rZOv5yHA8zGOuhzo0McrOqpwMer0nLog
+      #{redis-password}
+      client-type: lettuce
+      lettuce:
+        pool:
+          max-idle: 1000
+          max-active: 1000
+          enabled: true
+
+# Cấu hình cache cho liên service
+common:
+  cache:
+    cache-providers:
+      security-cache:
+        cache:
+          redis:
+            use-key-prefix: true
+            key-prefix: ekyc
+            cache-null-values: false
+          type: redis
+          security:
+            enable: true
+            secret-key: a37bccecf35a8fb9ae697c14
+            #{redis-secret-key}
+            config-key: Y7Z5dKrgzJezJvMnBg2ciyGQ
+            #{redis-config-key}
+        redis:
+          database: 10
+          #{database}
+          sentinel:
+            nodes: 192.168.74.99:26379,192.168.74.100:26379,192.168.74.101:26379
+          #master: fcSm9B52oaVYJFNfC+fVRL21BGd8hlnoZCrI
+          password: rZOv5yHA8zGOuhzo0McrOqpwMer0nLog
+          #{redis-password}
+          client-type: lettuce
+          lettuce:
+            pool:
+              max-idle: 1000
+              max-active: 1000
+              enabled: true
+      non-security-cache:
+        cache:
+          redis:
+            use-key-prefix: true
+            key-prefix: ekyc
+            cache-null-values: false
+          type: redis
+          security:
+            enable: true
+            config-key: {redis-config-key}
+        redis:
+          database: 10
+          #{database}
+          sentinel:
+            nodes: 192.168.74.99:26379,192.168.74.100:26379,192.168.74.101:26379
+          #master: fcSm9B52oaVYJFNfC+fVRL21BGd8hlnoZCrI
+          password: rZOv5yHA8zGOuhzo0McrOqpwMer0nLog
+          #{redis-password}
+          client-type: lettuce
+          lettuce:
+            pool:
+              max-idle: 1000
+              max-active: 1000
+              enabled: true

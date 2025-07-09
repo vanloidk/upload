@@ -1,0 +1,28 @@
+server:
+  port: 9040
+grpc:
+  port: 2${server.port}
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: task-internal-service-
+      pool:
+        core-size: 10
+        queue-capacity: 50
+        max-size: 300
+  
+ekyc:
+  root-url: {endpoint-minio}/{bucket-name-minio}
+
+s3:
+  endpoint: {endpoint-minio}
+  security:
+    access-key: {access-key-minio}
+    secret-key: {secret-key-minio}
+  bucket: {bucket-name-minio}
+
+wfm:
+  service:
+    GTEL_URL: "http://{host-port-c06-vnpay-side}/gtel_appserver/api/v4.4/cccd_verify"
+    timeOut: 120

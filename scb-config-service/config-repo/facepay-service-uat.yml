@@ -1,0 +1,41 @@
+server:
+  port: 9030
+grpc:
+  port: 2${server.port}
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: task-facepay-service-
+      pool:
+        core-size: 10
+        queue-capacity: 50
+        max-size: 300
+        
+common:
+  grpc:
+    servers:
+      wfm:
+         - host: ekyc-scb.vnpaytest.local
+         #{host-grpc-vnpay-side}
+           port: 19075
+         #{port-grpc-vnpay-side}
+  
+ekyc:
+  root-url: http://192.168.74.108:9000/facepay/
+  #192.168.74.108:9000/facepay
+  #{endpoint-minio}/{bucket-name-minio}
+
+s3:
+  endpoint: http://192.168.74.108:9000/
+  #{endpoint-minio}
+  security:
+    access-key: myminioadmin
+    #{access-key-minio}
+    secret-key: miniosecretkey
+    #{secret-key-minio}
+  bucket: facepay 
+  #{bucket-name-minio}
+
+
+

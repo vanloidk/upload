@@ -1,0 +1,30 @@
+server:
+  port: 9020
+grpc:
+  port: 2${server.port}
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: task-appserver-service-
+      pool:
+        core-size: 10
+        queue-capacity: 50
+        max-size: 300
+
+common:
+  grpc:
+    servers:
+      wfm:
+         - host: {host-grpc-vnpay-side}
+           port: {port-grpc-vnpay-side}
+  
+ekyc:
+  root-url: {endpoint-minio}/{bucket-name-minio}
+
+s3:
+  endpoint: {endpoint-minio}
+  security:
+    access-key: {access-key-minio}
+    secret-key: {secret-key-minio}
+  bucket: {bucket-name-minio}

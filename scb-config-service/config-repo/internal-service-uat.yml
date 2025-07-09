@@ -1,0 +1,30 @@
+server:
+  port: 9040
+grpc:
+  port: 2${server.port}
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: task-internal-service-
+      pool:
+        core-size: 10
+        queue-capacity: 50
+        max-size: 300
+  
+ekyc:
+  root-url: http://192.168.74.108:9000/ekyc
+
+s3:
+  endpoint: http://192.168.74.108:9000
+  security:
+    access-key: myminioadmin
+    secret-key: miniosecretkey
+  bucket: ekyc
+
+wfm:
+  service:
+  #c06 moi truong uat
+    GTEL_URL: "https://ekyc-c06.vnpaytest.local:443/gtel_appserver/api/v4.4/cccd_verify"
+    timeOut: 120
+    ssl: true

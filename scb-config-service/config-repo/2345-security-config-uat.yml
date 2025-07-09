@@ -1,0 +1,21 @@
+spring:
+  security:
+    database:
+      enable: true
+      config-key: 4rg5ltK3APSJG0zVZLjaMD2T
+    config:
+      enable: true
+      config-key: Y7Z5dKrgzJezJvMnBg2ciyGQ
+    redis:
+      enable: true
+      config-key: Y7Z5dKrgzJezJvMnBg2ciyGQ
+      prefix: scb-qd2345
+    not-filter:
+      endpoints:
+        - /actuator/
+        - /swagger/
+
+salt:
+  start: 2345@genpass#@
+  end: "##321@vpn"
+  backend: 8XkKZV4eB6Uuek+bfEFe4UW2CQG7UKHE2ERuxGfm655uWXAXXVFvup9qcHEgG/04

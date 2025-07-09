@@ -1,0 +1,58 @@
+spring:
+  jpa:
+    # show-sql: true
+    hibernate:
+      ddl-auto: none
+      format_sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        
+common:
+  datasource:
+    primary:
+      security:
+        enable: true
+        config-key: 4rg5ltK3APSJG0zVZLjaMD2T
+      jdbc-url: jdbc:oracle:thin:@192.168.74.98:1521/ekyc
+      #jdbc:oracle:thin:@{database-host}:1521/{ekyc-service-name}jdbc:oracle:thin:@192.168.74.98:1521/ekyc
+      username: QB/TAdMOC8I6G4ekWGMIxj1ZCY6jAmvQ
+      #{ekyc-user}EKYC_SCB
+      password: axS5sE68eLdI2UaRqDgcYQEtDZZ4H2QTqx1nyA==
+      #{ekyc-password}SCB$#uatekyc
+      driver-class-name: oracle.jdbc.OracleDriver
+      pool-name: hikari-dab
+      auto-commit: true
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+      minimum-idle: 3
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      idle-timeout: 60000
+    face-pay:
+      security:
+        enable: true
+        config-key: 4rg5ltK3APSJG0zVZLjaMD2T
+        #{database-config-key}
+      jdbc-url: jdbc:oracle:thin:@192.168.74.97:1521/facepay
+      #jdbc:oracle:thin:@{database-host}:1521/{db-facepay-service-name}jdbc:oracle:thin:@192.168.74.97:1521/facepay
+      username: fFnBSng8eM+9Q0MEVwAQ+CUPVupYv8Sj3KA9
+      #{db-facepay-user}FACEPAY_SCB
+      password: JXK0v0QlO8KuL/P5ouwX3ztzNVxA19t16fQQ/Q==
+      #{db-facepay-password}SCB$#uatface
+      driver-class-name: oracle.jdbc.OracleDriver
+      pool-name: hikari-dab
+      auto-commit: true
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+      minimum-idle: 3
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      idle-timeout: 60000

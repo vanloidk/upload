@@ -1,0 +1,42 @@
+logging:
+  class-mask: vn.vnpay.log.MaskingPatternLayout
+  # class-mask: vn.vnpay.demo.config.MaskingPatternLayout
+  #format config trên yml: {1}-{2}-{3}
+  #trong đó {1}: các filed name cần mask theo json string
+  #trong đó {2}: các filed name cần mask theo xml string
+  #trong đó {3}: các filed name cần mask theo number string
+  #NOTE: Nếu mỗi loại nhiều field thì cách nhau bằng dấu |
+  field-mask: -|-
+  graylog:
+    host: #
+    port: 12299
+    status: false
+    pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} %msg%n%exception"
+    async: false
+    level: INFO
+  info:
+    pattern:  "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p%t [ver%X{serverVersion}] [req%X{requestId}] [user%X{user}] [mid%X{mid}] - %m%n%exception"
+    async: true
+    status: true
+    level: INFO
+    size: 100MB
+    max-history: 30 #don vi ngay
+    total-size-cap: 100  # don vi GB
+  console:
+    pattern:  "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p%t [ver%X{serverVersion}] [req%X{requestId}] [user%X{user}] [mid%X{mid}] - %m%n%exception"
+    async: false
+    status: true
+    level: INFO
+  debug:
+    pattern:  "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p%t [ver%X{serverVersion}] [req%X{requestId}] [user%X{user}] [mid%X{mid}] - %m%n%exception"
+    async: false
+    status: false
+    level: DEBUG
+    size: 50MB
+    max-history: 30 #don vi ngay
+    total-size-cap: 100  # don vi GB
+  file:
+    path: /home/ebanking/logs
+  save-bath:
+    status: true
+    size: 3

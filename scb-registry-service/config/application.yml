@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: service-registry
+  profiles:
+    active: uat
+  config:
+    import: optional:configserver:http://192.168.73.237:8888/
+  cloud:
+    config:
+      name: 2345-service-registry

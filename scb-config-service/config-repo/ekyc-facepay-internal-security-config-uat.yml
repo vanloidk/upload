@@ -1,0 +1,13 @@
+common:
+  security:
+    key:
+      secret-key: Y7Z5dKrgzJezJvMnBg2ciyGQ
+      #{secret-key-using-tool-gen}
+    business-endpoints:
+      - /api/**
+
+share-key:
+  gtel: h3Ur7sPmWBMMoFikY5ateTJxhF4zBVZ+S73pgbWCZ7b9KMLk7w+ffds8KHcgHGyWwMkIBPD6QJLIrwjz8YD7T1OORS6YiGpMjoG7HESNhHbJZUgu07D1ZtH/Cz4daKssw3GrpAyOdV9b/etf1C95Iu1B4P1DCEmlDVhOaUPClhy78PWQJoYv0R1WCn1OO1jI
+  #{c06-secret-key}
+  token: c66908471baa47df9176f156516c0eb271d758148e56cd2d5a4aa2dc586fa319
+  #{token-mb-server}

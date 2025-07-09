@@ -1,0 +1,30 @@
+server:
+  port: 9020
+grpc:
+  port: 2${server.port}
+
+spring:
+  task:
+    execution:
+      thread-name-prefix: task-appserver-service-
+      pool:
+        core-size: 10
+        queue-capacity: 50
+        max-size: 300
+
+common:
+  grpc:
+    servers:
+      wfm:
+         - host: ekyc-scb.vnpaytest.local
+           port: 19075
+  
+ekyc:
+  root-url: http://192.168.74.108:9000/ekyc
+
+s3:
+  endpoint: http://192.168.74.108:9000/
+  security:
+    access-key: myminioadmin
+    secret-key: miniosecretkey
+  bucket: ekyc

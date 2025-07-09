@@ -1,0 +1,13 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}@${spring.cloud.client.ip-address}@${server.port}
+    status-page-url:  http://${eureka.hostname}:${server.port}/actuator/info
+    health-check-url:  http://${eureka.hostname}:${server.port}/actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://{IP-server-eureka}:{Port}/eureka/
+
+info:
+  name: ${spring.application.name}
+  description: Service for ${spring.application.name} business

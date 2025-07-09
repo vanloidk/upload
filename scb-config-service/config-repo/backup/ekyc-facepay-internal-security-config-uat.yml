@@ -1,0 +1,10 @@
+common:
+  security:
+    key:
+      secret-key: {secret-key-using-tool-gen}
+    business-endpoints:
+      - /api/**
+
+share-key:
+  gtel: {c06-secret-key}
+  token: {token-mb-server}

@@ -1,0 +1,24 @@
+spring:
+  cache:
+    secret: Y7Z5dKrgzJezJvMnBg2ciyGQ
+    expire-default: 30
+    redis:
+      cache-null-values: true
+      time-to-live: 720
+      use-key-prefix: true
+      key-prefix: scb-qd2345
+    type: redis
+  data:
+    redis:
+      database: 9 # database redis vi tri thu 9
+      timeout: 1800
+      host: # dung redis sentinel 
+      port: 6379
+      password:
+      sentinel:
+        master: fcSm9B52oaVYJFNfC+fVRL21BGd8hlnoZCrI
+        password: rZOv5yHA8zGOuhzo0McrOqpwMer0nLog
+        nodes:
+          - 192.168.74.99:26379
+          - 192.168.74.100:26379
+          - 192.168.74.101:26379

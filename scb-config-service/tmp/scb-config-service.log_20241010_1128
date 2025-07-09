@@ -1,0 +1,47 @@
+/home/ebanking/scb-config-service/scripts/launch.sh: line 19: java.se: command not found
+
+VM_OPTIONS ::  
+JAVA_HOME  ::  
+PATH       ::  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+openjdk version "21.0.3" 2024-04-16 LTS
+OpenJDK Runtime Environment (Red_Hat-21.0.3.0.9-1) (build 21.0.3+9-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-21.0.3.0.9-1) (build 21.0.3+9-LTS, mixed mode, sharing)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.6)
+
+2024-10-10T11:28:36.447+07:00  INFO 1040 --- [config-service] [           main] v.v.c.ConfigServiceApplication           : Starting ConfigServiceApplication using Java 21.0.3 with PID 1040 (/home/ebanking/scb-config-service/config-service.jar started by ebanking in /home/ebanking/scb-config-service)
+2024-10-10T11:28:36.454+07:00  INFO 1040 --- [config-service] [           main] v.v.c.ConfigServiceApplication           : The following 1 profile is active: "native"
+2024-10-10T11:28:39.318+07:00  INFO 1040 --- [config-service] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=876f41ef-544a-39bc-9554-dc71a680790a
+2024-10-10T11:28:39.883+07:00  INFO 1040 --- [config-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
+2024-10-10T11:28:39.918+07:00  INFO 1040 --- [config-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-10T11:28:39.918+07:00  INFO 1040 --- [config-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-10-10T11:28:39.979+07:00  INFO 1040 --- [config-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-10T11:28:39.981+07:00  INFO 1040 --- [config-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3282 ms
+2024-10-10T11:28:41.479+07:00  INFO 1040 --- [config-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path ''
+2024-10-10T11:28:41.517+07:00  INFO 1040 --- [config-service] [           main] v.v.c.ConfigServiceApplication           : Started ConfigServiceApplication in 6.684 seconds (process running for 8.893)
+2024-10-10T14:48:29.516+07:00  INFO 1040 --- [config-service] [nio-8888-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0xff0xf40xff0xfd0x06...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:407) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:262) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-10-10T16:35:42.836+07:00  INFO 1040 --- [config-service] [nio-8888-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-10T16:35:42.839+07:00  INFO 1040 --- [config-service] [nio-8888-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-10T16:35:42.845+07:00  INFO 1040 --- [config-service] [nio-8888-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-10-10T16:35:43.040+07:00  INFO 1040 --- [config-service] [nio-8888-exec-7] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/home/ebanking/scb-config-service/config-repo/2345-service-registry-uat.yml]' via location 'file:/home/ebanking/scb-config-service/config-repo/'
+2024-10-10T16:35:43.251+07:00  INFO 1040 --- [config-service] [nio-8888-exec-8] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'file [/home/ebanking/scb-config-service/config-repo/2345-service-registry-uat.yml]' via location 'file:/home/ebanking/scb-config-service/config-repo/'

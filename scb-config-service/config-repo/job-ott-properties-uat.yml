@@ -1,0 +1,10 @@
+ott:
+  url-send-message: "https://192.168.112.7:8231/ottnotice/scb/api/v2/sendMessage"
+  bank: "970455"
+  secret:
+    aes-key: "33c97ac8e0d90100bb87d9cb4d995063"
+    mac-key: "8785c69f00a0713c2e3e323c5aaba0f9"
+    
+job-send-ott:
+  fix-rate: 1000
+  batch-size: 100

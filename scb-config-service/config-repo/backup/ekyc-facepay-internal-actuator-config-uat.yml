@@ -1,0 +1,16 @@
+management:
+  server:
+    port: ${server.port}
+  health:
+    db:
+      enabled: true
+    redis:
+      enabled: true
+    mail:
+      enabled: true
+  endpoints:
+    gateway:
+      enabled: true
+    web:
+      exposure:
+        include: '*'

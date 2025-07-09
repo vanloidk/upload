@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    #url: jdbc:oracle:thin:@10.22.x.xx:1521/DVNHT1
+    #url: jdbc:oracle:thin:@192.168.74.19:1521/ebankuat
+    jdbc-url: a4M5VWf7HmdYVWGauudcWRucenjEcgEEUV3hlxqErcgGUQNxTWwSg6J+xSWNQroEFVHPYYrgA4Pm4CkEcA==
+    #    username: VNINFOSCB
+    username: 0yQ7DvrMofLrz5wc4gQApfcoHnb/BZzB8A==
+    password: va6xQgk01htZJGckMvES/ypUJZTNhvMVBg==
+    driver-class-name: oracle.jdbc.OracleDriver
+    minimumIdle: 5
+    maximumPoolSize: 50
+    idleTimeout: 30000
+    maxLifetime: 2000000
+    connectionTimeout: 30000
+    leak-detection-threshold: 5000
+    keepalive-time: 30000
+    pool-name: job-sent-ott-service

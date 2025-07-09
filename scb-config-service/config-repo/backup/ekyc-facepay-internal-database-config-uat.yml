@@ -1,0 +1,51 @@
+spring:
+  jpa:
+    # show-sql: true
+    hibernate:
+      ddl-auto: none
+      format_sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+
+common:
+  datasource:
+    primary:
+      security:
+        enable: true
+        config-key: {database-config-key}
+      jdbc-url: jdbc:oracle:thin:@{database-host}:1521/{ekyc-service-name}
+      username: {ekyc-user}
+      password: {ekyc-password}
+      driver-class-name: oracle.jdbc.OracleDriver
+      pool-name: hikari-dab
+      auto-commit: true
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+      minimum-idle: 3
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      idle-timeout: 60000
+    face-pay:
+      security:
+        enable: true
+        config-key: {database-config-key}
+      jdbc-url: jdbc:oracle:thin:@{database-host}:1521/{db-facepay-service-name}
+      username: {db-facepay-user}
+      password: {db-facepay-password}
+      driver-class-name: oracle.jdbc.OracleDriver
+      pool-name: hikari-dab
+      auto-commit: true
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+      minimum-idle: 3
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      idle-timeout: 60000
